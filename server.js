@@ -25,6 +25,8 @@ app.post('/api/login', (req, res) => {
 });
 app.use('/api/distributors', distributorRoutes);
 app.use('/api/orders', orderRoutes);
+const paymentRoutes = require('./routes/paymentRoutes');
+app.use('/api/payments', paymentRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'OrderFlow API is running' });
